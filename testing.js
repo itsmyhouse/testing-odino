@@ -34,21 +34,27 @@ function caesarCipher(message, key) {
 }
 
 function nextKeyCode (char, key) {
+    const aCode = "a".charCodeAt(0);    // 97
+    const zCode = "z".charCodeAt(0);    // 122
+    const ACode = "A".charCodeAt(0);    // 65
+    const ZCode = "Z".charCodeAt(0);    // 90
+    // 26 the alphabet letters number
+
     let encodedNum = char.charCodeAt(0) + key;
 
-    if( isLowerCase(char) && encodedNum > 122) {
+    if( isLowerCase(char) && encodedNum > zCode) {
         encodedNum -= 26;
     }
 
-    if( isLowerCase(char) && encodedNum < 97) {
+    if( isLowerCase(char) && encodedNum < aCode) {
         encodedNum += 26;
     }
 
-    if( isUpperCase(char) && encodedNum > 90) {
+    if( isUpperCase(char) && encodedNum > ZCode) {
         encodedNum -= 26;
     }
 
-    if( isUpperCase(char) && encodedNum < 65) {
+    if( isUpperCase(char) && encodedNum < ACode) {
         encodedNum += 26;
     }
 
